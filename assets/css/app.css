@@ -1,0 +1,274 @@
+/* ================= RESET ================= */
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= GLOBAL SPACE ================= */
+body {
+    padding: 20px; /* 🔥 ini kasih jarak 10px di semua sisi halaman */
+    
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #C0E1D2, #E5EEE4);
+    min-height: 100vh;
+}
+
+/* ================= CENTER ================= */
+.center-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ================= CARD ================= */
+.card {
+    background: #F6F4E8;
+    padding: 25px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+.riwayat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+/* bagian kiri */
+.riwayat-left {
+    flex: 1;
+    max-width: 75%;
+}
+
+/* teks isi biar tidak keluar */
+.riwayat-left p {
+    margin: 5px 0;
+    word-break: break-word;
+}
+
+/* bagian kanan */
+.riwayat-right {
+    white-space: nowrap;
+    margin-left: 10px;
+}
+/* ================= TEXT ================= */
+h2 {
+    margin-bottom: 10px;
+    color: #57613c;
+}
+
+p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* ================= INPUT ================= */
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #75806a;
+    transition: 0.3s;
+    font-size: 14px;
+    background-color: #faf9f2;
+
+}
+
+input:focus, textarea:focus {
+    border-color: #DC9B9B;
+    outline: none;
+}
+
+/* ================= BUTTON ================= */
+button {
+    cursor: pointer;
+}
+
+.btn {
+    margin-top: 12px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* VARIAN BUTTON */
+.btn-primary {
+    background: linear-gradient(135deg, #DC9B9B, #dfb5b5);
+    color: white;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #DC9B9B, #dfb5b5);
+    color: white;
+}
+
+.btn-danger,
+.btn-logout {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+}
+
+/* HOVER */
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* ================= BUTTON GROUP ================= */
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-group .btn {
+    flex: 1;
+}
+
+/* ================= ALERT ================= */
+.alert {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* ================= TABLE (ADMIN) ================= */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table th {
+    background: #4facfe;
+    color: white;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: center;
+}
+input[type="date"] {
+    margin-top: 10px;
+}
+/* ================= BADGE STATUS ================= */
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+}
+
+.badge-pending {
+    background: gray;
+}
+
+.badge-proses {
+    background: orange;
+}
+
+.badge-selesai {
+    background: green;
+}
+
+/* ================= HEADER ================= */
+.header {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* WRAPPER TABEL */
+.table-wrapper {
+    position: relative;
+}
+
+/* MODAL DI TABEL */
+.modal-box {
+    display: none;
+
+    position: fixed; /* 🔥 ganti dari absolute ke fixed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 🔥 center X & Y */
+
+    width: 100%;
+    max-width: 400px;
+
+    z-index: 999;
+}
+
+/* BACKGROUND OVERLAY DI TABEL */
+.modal-overlay {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.4);
+    z-index: 998;
+}
+
+/* ISI MODAL */
+.modal-inner {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+
+/* ANIMASI */
+@keyframes pop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
